@@ -25,12 +25,8 @@ mcp:
         BOCHA_API_KEY: ''
         PYTHONPATH: .
     brave:
-      args:
-      - -y
-      - '@modelcontextprotocol/server-brave-search'
-      command: npx
-      env:
-        BRAVE_API_KEY: ''
+      command: node
+      args: ["C:/Program Files/nodejs/node_modules/@modelcontextprotocol/server-brave-search/dist/index.js"]
     code-implementation:
       args:
       - tools/code_implementation_server.py
@@ -72,15 +68,8 @@ mcp:
       env:
         PYTHONPATH: .
     filesystem:
-      args:
-      - -y
-      - '@modelcontextprotocol/server-filesystem'
-      - .
-      command: npx
-    github-downloader:
-      args:
-      - tools/git_command.py
-      command: python
+      args: ["C:/Program Files/nodejs/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js", "."]
+      command: node
       env:
         PYTHONPATH: .
 openai:
